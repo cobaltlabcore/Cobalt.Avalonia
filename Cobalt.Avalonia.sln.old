@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cobalt.Avalonia.Desktop", "Cobalt.Avalonia.Desktop\Cobalt.Avalonia.Desktop.csproj", "{11B1F1FA-719C-4DB8-A56D-391B56AF402F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cobalt.Avalonia.Desktop.Core", "Cobalt.Avalonia.Desktop.Core\Cobalt.Avalonia.Desktop.Core.csproj", "{BEBB5E84-3160-4D98-A551-622777881437}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesterApp", "TesterApp\TesterApp.csproj", "{B6BE58F4-1FCD-4632-9188-1C5D87276704}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11B1F1FA-719C-4DB8-A56D-391B56AF402F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B1F1FA-719C-4DB8-A56D-391B56AF402F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B1F1FA-719C-4DB8-A56D-391B56AF402F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B1F1FA-719C-4DB8-A56D-391B56AF402F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEBB5E84-3160-4D98-A551-622777881437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEBB5E84-3160-4D98-A551-622777881437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEBB5E84-3160-4D98-A551-622777881437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEBB5E84-3160-4D98-A551-622777881437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BE58F4-1FCD-4632-9188-1C5D87276704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BE58F4-1FCD-4632-9188-1C5D87276704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BE58F4-1FCD-4632-9188-1C5D87276704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BE58F4-1FCD-4632-9188-1C5D87276704}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

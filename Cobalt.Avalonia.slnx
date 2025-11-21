@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Cobalt.Avalonia.Desktop.Core/Cobalt.Avalonia.Desktop.Core.csproj" />
+  <Project Path="Cobalt.Avalonia.Desktop/Cobalt.Avalonia.Desktop.csproj" />
+  <Project Path="TesterApp/TesterApp.csproj" />
+</Solution>
