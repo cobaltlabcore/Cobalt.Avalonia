@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Cobalt.Avalonia.Desktop/Controls/OverlayPresenter.axaml" />
+        <ResourceInclude Source="avares://Cobalt.Avalonia.Desktop/Controls/Editors/EditorBase.axaml" />
+        <ResourceInclude Source="avares://Cobalt.Avalonia.Desktop/Controls/Editors/Editors.axaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

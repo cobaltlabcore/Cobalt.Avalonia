@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:Cobalt.Avalonia.Desktop.Controls">
+    
+    <ControlTheme x:Key="{x:Type controls:OverlayPresenter}" TargetType="{x:Type controls:OverlayPresenter}">
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{DynamicResource SmokeFillColorDefaultBrush}">
+                    <Border VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Background="{DynamicResource SolidBackgroundFillColorBaseBrush}"
+                            BorderThickness="1"
+                            BorderBrush="{DynamicResource SurfaceStrokeColorDefaultBrush}"
+                            CornerRadius="4"
+                            Effect="drop-shadow(0 8 32 #66000000)">
+                        <Border Background="{DynamicResource LayerFillColorAltBrush}"
+                                CornerRadius="4">
+                            <ContentPresenter Content="{TemplateBinding Content}"
+                                              Margin="{TemplateBinding Padding}" />
+                        </Border>
+                    </Border>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+    
+</ResourceDictionary>

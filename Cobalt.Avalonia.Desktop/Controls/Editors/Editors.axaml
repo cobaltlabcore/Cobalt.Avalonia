@@ -1,0 +1,55 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:editors="using:Cobalt.Avalonia.Desktop.Controls.Editors">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Cobalt.Avalonia.Desktop/Controls/Editors/EditorBase.axaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <ControlTheme x:Key="{x:Type editors:TextEditor}"
+                  TargetType="{x:Type editors:TextEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    
+    <ControlTheme x:Key="{x:Type editors:IntEditor}"
+                  TargetType="{x:Type editors:IntEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    <ControlTheme x:Key="{x:Type editors:UIntEditor}"
+                  TargetType="{x:Type editors:UIntEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    
+    <ControlTheme x:Key="{x:Type editors:ShortEditor}"
+                  TargetType="{x:Type editors:ShortEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    <ControlTheme x:Key="{x:Type editors:UShortEditor}"
+                  TargetType="{x:Type editors:UShortEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    
+    <ControlTheme x:Key="{x:Type editors:LongEditor}"
+                  TargetType="{x:Type editors:LongEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    <ControlTheme x:Key="{x:Type editors:ULongEditor}"
+                  TargetType="{x:Type editors:ULongEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    
+    <ControlTheme x:Key="{x:Type editors:FloatEditor}"
+                  TargetType="{x:Type editors:FloatEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    <ControlTheme x:Key="{x:Type editors:DoubleEditor}"
+                  TargetType="{x:Type editors:DoubleEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    <ControlTheme x:Key="{x:Type editors:DecimalEditor}"
+                  TargetType="{x:Type editors:DecimalEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    
+    <ControlTheme x:Key="{x:Type editors:DataEditor}"
+                  TargetType="{x:Type editors:DataEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    
+    <ControlTheme x:Key="{x:Type editors:FileEditor}"
+                  TargetType="{x:Type editors:FileEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    <ControlTheme x:Key="{x:Type editors:FolderEditor}"
+                  TargetType="{x:Type editors:FolderEditor}"
+                  BasedOn="{StaticResource {x:Type editors:EditorBase}}"/>
+    
+</ResourceDictionary>
