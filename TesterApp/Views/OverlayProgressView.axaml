@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:TesterApp.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="{x:Type vm:OverlayProgressViewModel}"
+             x:Class="TesterApp.Views.OverlayProgressView">
+    <Grid RowDefinitions="Auto, Auto, Auto">
+        <TextBlock Grid.Row="0"
+                   Text="Operation title"
+                   Margin="0 0 0 20"/>
+        
+        <TextBlock Grid.Row="1"
+                   Text="{Binding Message}"
+                   Margin="0 0 0 10" />
+        
+        <ProgressBar Grid.Row="2"
+                     Value="{Binding Value}"
+                     IsIndeterminate="{Binding IsIndeterminate}"
+                     Height="10"/>
+    </Grid>
+</UserControl>

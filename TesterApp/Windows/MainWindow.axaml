@@ -1,0 +1,29 @@
+<uiWindow:AppWindow xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="using:FluentAvalonia.UI.Controls"
+                    xmlns:uiWindow="using:FluentAvalonia.UI.Windowing"
+                    xmlns:mdi="using:MdiAvalonia.Markup"
+                    xmlns:controls="using:Cobalt.Avalonia.Desktop.Controls"
+                    xmlns:vm="using:TesterApp.Windows.ViewModels"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+                    x:Class="TesterApp.Windows.MainWindow"
+                    x:DataType="{x:Type vm:MainWindowViewModel}"
+                    Width="1000" Height="720"
+                    WindowStartupLocation="CenterScreen"
+                    Title="TesterApp">
+    <Grid>
+        <ui:NavigationView x:Name="NavigationView"
+                           MenuItemsSource="{Binding NavigationService.MenuItems}"
+                           FooterMenuItemsSource="{Binding NavigationService.FooterMenuItems}"
+                           PaneDisplayMode="Left"
+                           IsSettingsVisible="False"
+                           IsPaneOpen="False"
+                           IsBackEnabled="False"
+                           IsBackButtonVisible="False">
+            <ui:Frame x:Name="NavigationViewFrame" />
+        </ui:NavigationView>
+        <ContentControl x:Name="OverlayHost" />
+    </Grid>
+</uiWindow:AppWindow>

@@ -1,0 +1,14 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:vm="using:TesterApp.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="{x:Type vm:ContentDialogComplexViewModel}"
+             x:Class="TesterApp.Views.ContentDialogComplexView">
+    <StackPanel Spacing="10">
+        <TextBox PasswordChar="*" Text="{Binding Pass1, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox PasswordChar="*" Text="{Binding Pass2, UpdateSourceTrigger=PropertyChanged}" />
+    </StackPanel>
+</UserControl>

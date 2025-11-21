@@ -1,0 +1,22 @@
+<uiWindow:AppWindow xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:uiWindow="using:FluentAvalonia.UI.Windowing"
+                    xmlns:vm="using:TesterApp.Windows.ViewModels"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+                    x:Class="TesterApp.Windows.SplashScreenWindow"
+                    x:DataType="{x:Type vm:SplashScreenViewModel}"
+                    Width="800" Height="450"
+                    Title="SplashScreenWindow"
+                    SystemDecorations="None"
+                    WindowStartupLocation="CenterScreen"
+                    Topmost="True">
+    <Grid RowDefinitions="*, Auto, Auto">
+        <TextBlock Grid.Row="1"
+                   Text="{Binding Message}" />
+        <ProgressBar Grid.Row="2"
+                     Value="{Binding Value}"
+                     IsIndeterminate="{Binding IsIndeterminate}" />
+    </Grid>
+</uiWindow:AppWindow>

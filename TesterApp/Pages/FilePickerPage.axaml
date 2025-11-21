@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:TesterApp.Pages.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="{x:Type vm:FilePickerPageViewModel}"
+             x:Class="TesterApp.Pages.FilePickerPage">
+    <ScrollViewer Padding="10">
+        <StackPanel Spacing="10">
+            <Button Content="Open file" Command="{Binding ShowOpenFilePickerCommand}" />
+            <Button Content="Save file" Command="{Binding ShowSaveFilePickerCommand}" />
+            <Button Content="Open folder" Command="{Binding ShowOpenFolderPickerCommand}" />
+            <TextBox />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

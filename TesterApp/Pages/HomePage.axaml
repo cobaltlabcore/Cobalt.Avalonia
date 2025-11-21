@@ -1,0 +1,73 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:mdi="using:MdiAvalonia.Markup"
+             xmlns:vm="using:TesterApp.Pages.ViewModels"
+             xmlns:editors="using:Cobalt.Avalonia.Desktop.Controls.Editors"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="{x:Type vm:HomePageViewModel}"
+             x:Class="TesterApp.Pages.HomePage">
+    <ScrollViewer Padding="10">
+        <StackPanel Spacing="10">
+            <Button Content="Navigate to settings" Command="{Binding NavigateToSettingsCommand}" Theme="{DynamicResource TransparentButton}" />
+            
+            <Button Content="Navigate to test page" Command="{Binding NavigateToTestCommand}" />
+            
+            <ui:SettingsExpander Header="Overlay"
+                                 Description="Show overlay sample view"
+                                 IsClickEnabled="True" 
+                                 Command="{Binding ShowOverlayCommand}">
+                <ui:SettingsExpander.IconSource>
+                    <ui:PathIconSource Data="{mdi:IconGeometry Icon=overscan}" />
+                </ui:SettingsExpander.IconSource>
+                <ui:SettingsExpander.ActionIconSource>
+                    <ui:PathIconSource Data="{mdi:IconGeometry Icon=chevron_right}" />
+                </ui:SettingsExpander.ActionIconSource>
+            </ui:SettingsExpander>
+            
+            <ui:SettingsExpander Header="Dialog"
+                                 Description="Show simple dialog"
+                                 IsClickEnabled="True" 
+                                 Command="{Binding ShowDialogSimpleCommand}">
+                <ui:SettingsExpander.IconSource>
+                    <ui:PathIconSource Data="{mdi:IconGeometry Icon=dock_window}" />
+                </ui:SettingsExpander.IconSource>
+                <ui:SettingsExpander.ActionIconSource>
+                    <ui:PathIconSource Data="{mdi:IconGeometry Icon=chevron_right}" />
+                </ui:SettingsExpander.ActionIconSource>
+            </ui:SettingsExpander>
+            
+            <ui:SettingsExpander Header="Dialog"
+                                 Description="Show complex dialog"
+                                 IsClickEnabled="True" 
+                                 Command="{Binding ShowDialogComplexCommand}">
+                <ui:SettingsExpander.IconSource>
+                    <ui:PathIconSource Data="{mdi:IconGeometry Icon=dock_window}" />
+                </ui:SettingsExpander.IconSource>
+                <ui:SettingsExpander.ActionIconSource>
+                    <ui:PathIconSource Data="{mdi:IconGeometry Icon=chevron_right}" />
+                </ui:SettingsExpander.ActionIconSource>
+            </ui:SettingsExpander>
+            
+            <editors:DoubleEditor Title="test"
+                                  Value="{Binding DoubleValue}">
+                <editors:DoubleEditor.Buttons>
+                    <Button>
+                        <PathIcon Data="{mdi:IconGeometry Icon=clipboard}" Width="16" Height="16" />
+                    </Button>
+                    <Button>
+                        <PathIcon Data="{mdi:IconGeometry Icon=database}" Width="16" Height="16" />
+                    </Button>
+                    <Button>
+                        <PathIcon Data="{mdi:IconGeometry Icon=file}" Width="16" Height="16" />
+                    </Button>
+                </editors:DoubleEditor.Buttons>
+            </editors:DoubleEditor>
+            
+            <editors:FileEditor Title="My file path" FilePickerService="{Binding FilePickerService}" />
+            <editors:FolderEditor Title="My folder path" FolderPickerService="{Binding FolderPickerService}" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

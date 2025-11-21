@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mdi="using:MdiAvalonia.Markup"
+             xmlns:vm="using:TesterApp.Pages.ViewModels"
+             xmlns:editors="using:Cobalt.Avalonia.Desktop.Controls.Editors"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="{x:Type vm:EditorsPageViewModel}"
+             x:Class="TesterApp.Pages.EditorsPage">
+    <ScrollViewer Padding="10 10 20 10">
+        <StackPanel Spacing="10">
+            <Button Content="Validate all" Command="{Binding ValidateViewModelCommand}" />
+            <editors:TextEditor Title="TextEditor" Value="{Binding StringValueShort}" ValidationPropertyName="StringValueShort" />
+            <editors:TextEditor Title="TextEditor (multiline)" Value="{Binding StringValueLong}"
+                                AcceptsReturn="True" VerticalAlignment="Stretch" TextEditorMinHeight="80" TextEditorMaxHeight="80" />
+            <editors:DoubleEditor Title="DoubleEditor" Value="{Binding DoubleValue}" IsNullableBoundValue="True" ValueFormat="N3" />
+            <editors:FloatEditor Title="FloatEditor" Value="{Binding FloatValue}" />
+            <editors:DecimalEditor Title="DecimalEditor" Value="{Binding DecimalValue}" />
+            <editors:ShortEditor Title="ShortEditor" Value="{Binding ShortValue}" />
+            <editors:UShortEditor Title="UShortEditor" Value="{Binding UShortValue}" />
+            <editors:IntEditor Title="IntEditor" Value="{Binding IntValue}" ValidationPropertyName="IntValue" />
+            <editors:UIntEditor Title="UIntEditor" Value="{Binding UIntValue}" />
+            <editors:LongEditor Title="LongEditor" Value="{Binding LongValue}" />
+            <editors:ULongEditor Title="ULongEditor" Value="{Binding ULongValue}" />
+            <editors:DataEditor Title="Hexadecimal data" Value="{Binding DataValue}" Encoding="Hexadecimal" IsNullableBoundValue="True">
+                <editors:DataEditor.Buttons>
+                    <Button Command="{Binding GenerateRandomDataCommand}">
+                        <PathIcon Data="{mdi:IconGeometry Icon=creation}" Width="16" Height="16" />
+                    </Button>
+                </editors:DataEditor.Buttons>
+            </editors:DataEditor>
+            <editors:DataEditor Title="Base64 data" Value="{Binding DataValue}" Encoding="Base64" IsNullableBoundValue="True">
+                <editors:DataEditor.Buttons>
+                    <Button Command="{Binding GenerateRandomDataCommand}">
+                        <PathIcon Data="{mdi:IconGeometry Icon=creation}" Width="16" Height="16" />
+                    </Button>
+                </editors:DataEditor.Buttons>
+            </editors:DataEditor>
+            <editors:FileEditor Title="File" Value="{Binding FileValue}" FilePickerService="{Binding FilePickerService}" />
+            <editors:FolderEditor Title="Folder" Value="{Binding FolderValue}" FolderPickerService="{Binding FolderPickerService}" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
