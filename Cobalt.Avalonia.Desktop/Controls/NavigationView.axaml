@@ -1,0 +1,103 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:Cobalt.Avalonia.Desktop.Controls">
+
+    <!-- NavigationViewItem Theme -->
+    <ControlTheme x:Key="{x:Type controls:NavigationViewItem}" TargetType="controls:NavigationViewItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+        <Setter Property="Padding" Value="4,8" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="LayoutRoot"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Margin="4,2">
+                    <StackPanel Orientation="Vertical" Spacing="4" Margin="{TemplateBinding Padding}">
+                        <!-- Icon Container -->
+                        <ContentPresenter Name="IconPresenter"
+                                          Content="{TemplateBinding Icon}"
+                                          HorizontalAlignment="Center"
+                                          Height="24" 
+                                          Width="24"/>
+                        
+                        <!-- Text Container -->
+                        <!-- <ContentPresenter Name="ContentPresenter" -->
+                        <!--                   Content="{TemplateBinding Content}" -->
+                        <!--                   ContentTemplate="{TemplateBinding ContentTemplate}" -->
+                        <!--                   HorizontalAlignment="Center" -->
+                        <!--                   TextBlock.FontSize="10" -->
+                        <!--                   TextBlock.FontWeight="Normal"/> -->
+                        <ContentPresenter Name="ContentPresenter"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+        <!-- Visual States -->
+        <Style Selector="^:pointerover /template/ Border#LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource SubtleFillColorSecondaryBrush}" />
+        </Style>
+        <Style Selector="^:pressed /template/ Border#LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource SubtleFillColorTertiaryBrush}" />
+        </Style>
+        <Style Selector="^:selected">
+            <Style Selector="^ /template/ Border#LayoutRoot">
+                <Setter Property="Background" Value="{DynamicResource SubtleFillColorSecondaryBrush}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#ContentPresenter">
+                <Setter Property="TextBlock.FontWeight" Value="SemiBold" />
+            </Style>
+            <!-- Optional: Accent color indicator -->
+            <Style Selector="^ /template/ ContentPresenter#IconPresenter">
+                <Setter Property="TextBlock.Foreground" Value="{DynamicResource SystemControlHighlightAccentBrush}" />
+            </Style>
+        </Style>
+    </ControlTheme>
+
+    <!-- NavigationView Theme -->
+    <ControlTheme x:Key="{x:Type controls:NavigationView}" TargetType="controls:NavigationView">
+        <Setter Property="PaneBackground" Value="{DynamicResource SolidBackgroundFillColorBaseBrush}" />
+        <Setter Property="Background" Value="{DynamicResource LayerFillColorDefaultBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="Auto,*">
+                    <!-- Navigation Pane -->
+                    <Border Grid.Column="0"
+                            Width="{TemplateBinding PaneWidth}"
+                            Background="{TemplateBinding PaneBackground}"
+                            BorderBrush="{DynamicResource SurfaceStrokeColorDefaultBrush}"
+                            BorderThickness="0,0,1,0">
+                        <ListBox Name="PART_PaneListBox"
+                                 ItemsSource="{TemplateBinding MenuItems}"
+                                 SelectedItem="{TemplateBinding SelectedItem, Mode=TwoWay}"
+                                 Background="Transparent"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <ListBox.Styles>
+                                <!-- Remove default ListBox padding/styles that might interfere -->
+                                <Style Selector="ListBoxItem">
+                                    <Setter Property="Padding" Value="0"/>
+                                    <Setter Property="Margin" Value="0"/>
+                                </Style>
+                            </ListBox.Styles>
+                        </ListBox>
+                    </Border>
+
+                    <!-- Content Area -->
+                    <ContentPresenter Grid.Column="1"
+                                      Content="{TemplateBinding Content}"
+                                      Margin="{TemplateBinding Padding}"
+                                      Background="{TemplateBinding Background}"/>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

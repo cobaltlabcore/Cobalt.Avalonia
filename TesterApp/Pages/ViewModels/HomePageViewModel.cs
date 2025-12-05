@@ -12,16 +12,13 @@ namespace TesterApp.Pages.ViewModels;
 
 public class HomePageViewModel : ObservableObject
 {
-    private readonly INavigationService _navigationService;
     private readonly IOverlayService _overlayService;
     private readonly IContentDialogService _contentDialogService;
 
     public HomePageViewModel(
-        INavigationService navigationService,
         IOverlayService overlayService,
         IContentDialogService contentDialogService)
     {
-        _navigationService = navigationService;
         _overlayService = overlayService;
         _contentDialogService = contentDialogService;
         NavigateToSettingsCommand = new RelayCommand(NavigateToSettings);
@@ -50,12 +47,12 @@ public class HomePageViewModel : ObservableObject
 
     private void NavigateToSettings()
     {
-        _navigationService.NavigateTo(typeof(SettingsPage));
+        // _navigationService.NavigateTo(typeof(SettingsPage));
     }
     
     private void NavigateToTest()
     {
-        _navigationService.NavigateTo(typeof(TestPage));
+        // _navigationService.NavigateTo(typeof(TestPage));
     }
 
     private async Task ShowOverlay()

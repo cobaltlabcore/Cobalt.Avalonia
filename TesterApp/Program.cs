@@ -42,7 +42,7 @@ public class AppBootstrapper(string[] args) : AvaloniaBootstrapper(args)
     {
         base.ConfigureServices(context, services);
 
-        _ = services.AddSingleton<INavigationService, NavigationService>();
+        // _ = services.AddSingleton<INavigationService, NavigationService>();
         _ = services.AddSingleton<IFilePickerService, FilePickerService>();
         _ = services.AddSingleton<IFolderPickerService, FolderPickerService>();
         _ = services.AddSingleton<IOverlayService, OverlayService>();

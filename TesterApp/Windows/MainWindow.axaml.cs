@@ -13,11 +13,8 @@ namespace TesterApp.Windows;
 
 public partial class MainWindow : AppWindow
 {
-    private readonly INavigationService _navigationService;
-
-    public MainWindow(MainWindowViewModel viewModel, INavigationService navigationService)
+    public MainWindow(MainWindowViewModel viewModel)
     {
-        _navigationService = navigationService;
         InitializeComponent();
         DataContext = viewModel;
         Loaded += OnLoaded;
@@ -66,6 +63,5 @@ public partial class MainWindow : AppWindow
 
     private void OnLoaded(object? sender, RoutedEventArgs e)
     {
-        _navigationService.NavigateTo(typeof(HomePage));
     }
 }

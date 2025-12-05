@@ -5,6 +5,7 @@
         <ResourceInclude Source="avares://Cobalt.Avalonia.Desktop/Controls/OverlayPresenter.axaml" />
         <ResourceInclude Source="avares://Cobalt.Avalonia.Desktop/Controls/Editors/EditorBase.axaml" />
         <ResourceInclude Source="avares://Cobalt.Avalonia.Desktop/Controls/Editors/Editors.axaml" />
+        <ResourceInclude Source="avares://Cobalt.Avalonia.Desktop/Controls/NavigationView.axaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

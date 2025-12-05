@@ -14,16 +14,16 @@
                     WindowStartupLocation="CenterScreen"
                     Title="TesterApp">
     <Grid>
-        <ui:NavigationView x:Name="NavigationView"
-                           MenuItemsSource="{Binding NavigationService.MenuItems}"
-                           FooterMenuItemsSource="{Binding NavigationService.FooterMenuItems}"
-                           PaneDisplayMode="Left"
-                           IsSettingsVisible="False"
-                           IsPaneOpen="False"
-                           IsBackEnabled="False"
-                           IsBackButtonVisible="False">
-            <ui:Frame x:Name="NavigationViewFrame" />
-        </ui:NavigationView>
+        <!-- <ui:NavigationView x:Name="NavigationView" -->
+        <!--                    MenuItemsSource="{Binding NavigationService.MenuItems}" -->
+        <!--                    FooterMenuItemsSource="{Binding NavigationService.FooterMenuItems}" -->
+        <!--                    PaneDisplayMode="Left" -->
+        <!--                    IsSettingsVisible="False" -->
+        <!--                    IsPaneOpen="False" -->
+        <!--                    IsBackEnabled="False" -->
+        <!--                    IsBackButtonVisible="False"> -->
+        <!--     <ui:Frame x:Name="NavigationViewFrame" /> -->
+        <!-- </ui:NavigationView> -->
         <ContentControl x:Name="OverlayHost" />
     </Grid>
 </uiWindow:AppWindow>

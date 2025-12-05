@@ -39,8 +39,8 @@ public partial class App : Application
             serviceProvider.GetRequiredService<IFolderPickerService>().SetStorageProvider(mainWindow.StorageProvider);
             serviceProvider.GetRequiredService<IOverlayService>().SetOverlayHost(mainWindow.OverlayHost);
             
-            var navigationService = serviceProvider.GetRequiredService<INavigationService>();
-            navigationService.Initialize(mainWindow.NavigationView, mainWindow.NavigationViewFrame);
+            // var navigationService = serviceProvider.GetRequiredService<INavigationService>();
+            // navigationService.Initialize(mainWindow.NavigationView, mainWindow.NavigationViewFrame);
             
             
             desktop.MainWindow = mainWindow;
