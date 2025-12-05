@@ -36,7 +36,10 @@
                         <ContentPresenter Name="ContentPresenter"
                                           Content="{TemplateBinding Content}"
                                           ContentTemplate="{TemplateBinding ContentTemplate}"
-                                          HorizontalAlignment="Center"/>
+                                          HorizontalAlignment="Center"
+                                          TextAlignment="Center"
+                                          TextWrapping="Wrap"
+                                          FontSize="13"/>
                     </StackPanel>
                 </Border>
             </ControlTemplate>
@@ -50,16 +53,17 @@
             <Setter Property="Background" Value="{DynamicResource SubtleFillColorTertiaryBrush}" />
         </Style>
         <Style Selector="^:selected">
+            <Setter Property="Foreground" Value="{DynamicResource AccentTextFillColorPrimaryBrush}" />
             <Style Selector="^ /template/ Border#LayoutRoot">
                 <Setter Property="Background" Value="{DynamicResource SubtleFillColorSecondaryBrush}" />
             </Style>
-            <Style Selector="^ /template/ ContentPresenter#ContentPresenter">
-                <Setter Property="TextBlock.FontWeight" Value="SemiBold" />
-            </Style>
+            <!-- <Style Selector="^ /template/ ContentPresenter#ContentPresenter"> -->
+            <!--     <Setter Property="TextBlock.FontWeight" Value="SemiBold" /> -->
+            <!-- </Style> -->
             <!-- Optional: Accent color indicator -->
-            <Style Selector="^ /template/ ContentPresenter#IconPresenter">
-                <Setter Property="TextBlock.Foreground" Value="{DynamicResource SystemControlHighlightAccentBrush}" />
-            </Style>
+            <!-- <Style Selector="^ /template/ ContentPresenter#IconPresenter"> -->
+            <!--     <Setter Property="TextBlock.Foreground" Value="{DynamicResource SystemControlHighlightAccentBrush}" /> -->
+            <!-- </Style> -->
         </Style>
     </ControlTheme>
 
@@ -73,6 +77,7 @@
                     <!-- Navigation Pane -->
                     <Border Grid.Column="0"
                             Width="{TemplateBinding PaneWidth}"
+                            MinWidth="100"
                             Background="{TemplateBinding PaneBackground}"
                             BorderBrush="{DynamicResource SurfaceStrokeColorDefaultBrush}"
                             BorderThickness="0,0,1,0">

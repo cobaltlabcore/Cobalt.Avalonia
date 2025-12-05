@@ -18,7 +18,7 @@ public class NavigationView : ContentControl
         AvaloniaProperty.Register<NavigationView, object?>(nameof(SelectedItem));
 
     public static readonly StyledProperty<double> PaneWidthProperty =
-        AvaloniaProperty.Register<NavigationView, double>(nameof(PaneWidth), 72.0);
+        AvaloniaProperty.Register<NavigationView, double>(nameof(PaneWidth), double.NaN);
 
     public static readonly StyledProperty<IBrush?> PaneBackgroundProperty =
         AvaloniaProperty.Register<NavigationView, IBrush?>(nameof(PaneBackground));

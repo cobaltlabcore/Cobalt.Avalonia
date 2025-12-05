@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:ui="using:FluentAvalonia.UI.Controls"
                     xmlns:uiWindow="using:FluentAvalonia.UI.Windowing"
-                    xmlns:mdi="using:MdiAvalonia.Markup"
+                    xmlns:pia="using:PhosphorIconsAvalonia.Markup"
                     xmlns:controls="using:Cobalt.Avalonia.Desktop.Controls"
                     xmlns:vm="using:TesterApp.Windows.ViewModels"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -14,16 +14,35 @@
                     WindowStartupLocation="CenterScreen"
                     Title="TesterApp">
     <Grid>
-        <!-- <ui:NavigationView x:Name="NavigationView" -->
-        <!--                    MenuItemsSource="{Binding NavigationService.MenuItems}" -->
-        <!--                    FooterMenuItemsSource="{Binding NavigationService.FooterMenuItems}" -->
-        <!--                    PaneDisplayMode="Left" -->
-        <!--                    IsSettingsVisible="False" -->
-        <!--                    IsPaneOpen="False" -->
-        <!--                    IsBackEnabled="False" -->
-        <!--                    IsBackButtonVisible="False"> -->
-        <!--     <ui:Frame x:Name="NavigationViewFrame" /> -->
-        <!-- </ui:NavigationView> -->
+        <Grid ColumnDefinitions="Auto,*">
+            <controls:NavigationView PaneWidth="100">
+                <controls:NavigationView.MenuItems>
+                    <controls:NavigationViewItem Content="Home">
+                        <controls:NavigationViewItem.Icon>
+                            <PathIcon Data="{pia:IconGeometry Icon=house}" />
+                        </controls:NavigationViewItem.Icon>
+                    </controls:NavigationViewItem>
+                    <controls:NavigationViewItem Content="Editor">
+                        <controls:NavigationViewItem.Icon>
+                            <PathIcon Data="{pia:IconGeometry Icon=textbox}" />
+                        </controls:NavigationViewItem.Icon>
+                    </controls:NavigationViewItem>
+                    <controls:NavigationViewItem Content="FilePicker">
+                        <controls:NavigationViewItem.Icon>
+                            <PathIcon Data="{pia:IconGeometry Icon=file}" />
+                        </controls:NavigationViewItem.Icon>
+                    </controls:NavigationViewItem>
+                    <controls:NavigationViewItem Content="Settings">
+                        <controls:NavigationViewItem.Icon>
+                            <PathIcon Data="{pia:IconGeometry Icon=gear}" />
+                        </controls:NavigationViewItem.Icon>
+                    </controls:NavigationViewItem>
+                </controls:NavigationView.MenuItems>
+            </controls:NavigationView>
+            
+            <!-- TODO: Bind to current navigation item -->
+            <ContentControl Grid.Column="1" />
+        </Grid>
         <ContentControl x:Name="OverlayHost" />
     </Grid>
 </uiWindow:AppWindow>
